@@ -1,0 +1,83 @@
+__________________________________________________________
+ссылка на гитхаб:
+
+https://github.com/Nikson-original/desktop-tutorial/blob/main/README.md
+__________________________________________________________
+датасэт для опознания животных:
+
+https://www.kaggle.com/datasets/antoreepjana/animals-detection-images-dataset
+__________________________________________________________
+Похожий бот, и использование функционала, может оказаться полезным:
+
+https://habr.com/ru/companies/otus/articles/726652/
+__________________________________________________________
+Рабочий код но с нюансом:
+import tensorflow as tf
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input, decode_predictions
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+from PIL import Image
+import os
+
+# Загрузка предобученной модели MobileNetV2
+model = MobileNetV2(weights='imagenet')
+
+def load_and_preprocess_image(image_path):
+    """
+    Загружает изображение, изменяет размер и подготавливает для предсказания.
+    """
+    try:
+        if not os.path.exists(image_path):
+            raise ValueError(f"Файл {image_path} не найден")
+        
+        img = cv2.imread(image_path)
+        if img is None:
+            raise ValueError(f"Не удалось загрузить изображение из {image_path}")
+        
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        resized_img = cv2.resize(img, (224, 224))  # Размер для MobileNetV2
+        processed_img = preprocess_input(np.expand_dims(resized_img, axis=0))  # Добавляем размерность для batch
+        return img, processed_img
+    except Exception as e:
+        print(f"Ошибка при загрузке или обработке изображения: {e}")
+        return None, None
+
+def predict_animal(image_path):
+    """
+    Выполняет распознавание животного на изображении.
+    """
+    original_img, processed_img = load_and_preprocess_image(image_path)
+    if original_img is None or processed_img is None:
+        return None, None  # Возвращаем None в случае ошибки при обработке изображения
+    
+    predictions = model.predict(processed_img)
+    decoded_predictions = decode_predictions(predictions, top=3)  # Топ-3 предсказания
+    return original_img, decoded_predictions
+
+def display_results(image, predictions):
+    """
+    Отображает изображение с результатами предсказания.
+    """
+    if image is None or predictions is None:
+        print("Не удалось получить результаты для отображения.")
+        return
+    
+    plt.imshow(image)
+    plt.axis('off')
+    plt.title("Predictions:")
+    for i, (imagenet_id, label, score) in enumerate(predictions[0]):
+        plt.text(10, 30 + i * 20, f"{label}: {score:.2f}", color='red', fontsize=12, backgroundcolor='white')
+    plt.show()
+
+# Убедитесь, что путь к изображению правильный
+image_path = r'U:\JKTV24\Group\Berezovskyi\project_animal-AI\dog.jpg'  # Используй латинские символы в названии
+
+# Предсказание и визуализация
+try:
+    original_img, predictions = predict_animal(image_path)
+    display_results(original_img, predictions)
+except Exception as e:
+    print("Error:", e)
+________________________________________________________

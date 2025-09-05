@@ -1,0 +1,753 @@
+/* 
+ul.nav{
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+.nav li { 
+    display: inline; ;
+}
+ul.nav a {
+    display: inline-block;
+    width: 5em;
+    padding:10px;
+    background-color: #f4f4f4;
+    border: 1px dashed #333;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+}
+ul.nav a:hover{
+    background-color: #333;
+    color: #f4f4f4;
+}
+ */
+
+ @font-face {
+    font-family: 'Some Time Later';
+    src: url('some_time_later.otf') format('opentype');
+  }
+
+ body {
+    background-image: url(image/fon.jpg);
+    color: #fff; /* Белый текст */
+    font-family: some time later;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-image: url(image/fon2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: some time later;
+    
+}
+
+header {
+    
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    background-image: url('image/fon4.png');
+    background-repeat: no-repeat;
+    font-size: 18px;
+    background-position: center;
+    padding: 20px 40px; /* Добавьте отступы, чтобы текст был виден */
+    text-align: center; /* Центрирует текст */
+    background-size: cover;
+    width: 20%;
+    height: 30%;
+    
+}
+
+.nav li a {
+    color: #fff; /* Цвет текста */
+    text-decoration: none; /* Убирает подчеркивание ссылок */
+    font-size: 1.2em;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 5px #000000;
+}
+
+
+
+
+
+
+
+main {
+    padding: 20px;
+}
+
+.landing1 {
+    background-image: url('image/landing3.png'); /* Замените на путь к вашему фоновому изображению */
+    border: 3px solid #000000;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+    width: 800px;
+    height: 140px;
+    margin-left: 150px;
+}
+
+.landing1 h1 {
+    color: #FF0000;
+    width: 400px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+    font-family: some time later;
+}
+
+.fix-stroke {
+    paint-order: stroke fill;
+}
+
+.landing1 button {
+    margin-left: 25%;
+    background-color: #FAF671; /* Желтый цвет кнопки */
+    color: #BB1616;
+    padding: 10px 30px;
+    font-size: 1.4em;
+    font-family: some time later;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 3px solid #F7ADAE;
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    box-shadow: 10px 5px 5px #F7ADAE;
+}
+
+
+.ppp{
+    background-image: url(image/gugu.png);
+    background-size: cover;
+    background-position: center;
+    height: 835px;
+}
+
+
+
+
+
+.landing2 {
+    background-image: url(image/landing2.png);
+    text-align: center;
+    padding: 40px 20px;
+    margin-left: 200px;
+    background-position: center;
+    margin-top: 20px;
+    width: 60%;
+    height: 250px;
+    border-radius: 20%;
+}
+
+.landing2 h2 {
+    font-size: 1.1em;
+    width: 250px;
+    margin-top: 0%;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 5px #000000;
+
+}
+
+.landing2 h3 {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-top: 0px;
+    width: 200px;
+    float: left;
+    margin-top: 30px;
+    margin-right: 350px;
+    width: 250px;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 5px #000000;
+}
+
+
+.landing2 p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    float: left;
+    color: #FAF671;
+    margin-left: 270px;
+    top: 750px;
+    position: absolute;
+    -webkit-text-stroke: 3px #F7ADAE;
+    paint-order: stroke fill;
+    font: 1em some time later;
+}
+
+
+
+.landing2 img {
+    margin-bottom: 20px;
+    width: 20%;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5%;
+    position: absolute;
+    top: 550px;
+    right: 550px;
+}
+
+.landing2 button {
+    background-color: #FAF671; /* Желтый цвет кнопки */
+    color: #BB1616;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    float: left;
+    margin-left: 60px;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 5px #000000;
+    font-family: some time later;
+    box-shadow: 10px 5px 5px #F7ADAE;
+    border: 3px solid #F7ADAE;
+}
+
+.landing2 button:hover {
+    background: #1caa09;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    font: 1em some time later;
+}
+
+.landing1 button:hover {
+    background: #1caa09;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    font: 1em some time later;
+}
+
+
+
+
+
+
+
+
+
+.info {
+    background-image: url(image/fon4.png);
+    padding: 30px 10px;
+    text-align: center;
+    background-repeat: no-repeat;
+    width: 1100px;
+    height: 600px;
+    background-size: cover;
+    margin-top: 20px;
+    background-position: center;
+    margin-left: 20px;
+
+    
+}
+
+.info p {
+    font-size: 1.7em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 5px #000000;
+}
+
+.info img{
+    width: 1100px;
+    position: relative;
+    bottom: 50px;
+    
+    
+}
+
+
+.info h2 {
+    font-size: 2em;
+    margin-bottom: 60px;
+    paint-order: stroke fill;
+    color: #BB1616;
+    background-color: #FAF671;
+    -webkit-text-stroke: 5px #000000;
+    border: 2px solid black;
+    height: 40px;
+    border-radius: 1%;
+    text-align: center;
+    margin-top: 0px;
+    float: left;
+    width: 1100px;
+    box-shadow: 10px 5px 5px #F7ADAE;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+/* Дополнительные стили для изображения каната */
+main img[alt="kanat"] {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    margin-top: 50px;
+}
+
+/* Дополнительные стили для изображения цветов */
+
+
+.kanat{
+    background-image: url('image/kanat.jpg');
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+
+
+}
+
+.flower{
+    height: 20px;
+    width: 500px;
+    
+    
+    margin-bottom: 50px;
+    position: absolute;
+
+}
+
+
+
+.menu{
+    paint-order: stroke fill;
+    -webkit-text-stroke: 5px #000000;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    
+}
+
+.burgers, .desserts, .drinks {
+    width: 30%; /* Три колонки по 30%, оставляя немного места для отступов */
+    float: left;
+    margin: 19px ;
+    padding: 0px;
+    background-image: url(image/anas.png);
+    border-radius: 10px;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+    border: 5px solid #000000;
+    
+}
+
+.menu h5 {
+    text-align: center;
+    font-size: 3em;
+    padding: 0px;
+    border-radius: 30%;
+    font-size: 1.2em;
+    background-image: url(image/Bikini_Bottom.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  600px;
+    height: 30px;
+    width: 50%; /* Заголовок занимает всю ширину контейнера */
+    padding: 5px 0;
+    border: solid 5px #000000;
+    margin-left: 300px;
+    
+}
+
+.menu1 {
+    text-align: center;
+    background-image: url(image/dog.png);
+}
+
+.menu1 h3 {
+    font-size: 1em;
+
+    
+    
+}
+
+.menu1 h4 {
+    font-size: 1em;
+    color: #16b130; /* Серый цвет для цены */
+    margin-bottom: 5px;
+    
+}
+
+.menu1 img {
+    width: auto;
+    height: 60px;
+
+    border-radius: 8px;
+    background-image: url(image/dog.png);
+}
+
+
+
+
+
+/* Стили для заголовков разделов */
+.burgers h1, .desserts h1, .drinks h1 {
+    background-image: url(image/cat.png);
+    color: white;
+    
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+/* Очистка float */
+.burgers::after, .desserts::after, .drinks::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+.workers {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    margin-top: 110px;
+    justify-content: space-around;
+    padding: 20px;
+    position: relative; /* Добавляем позиционирование для контейнера */
+    
+}
+
+.workers h2 {
+    font-size: 2em;
+    height: 50px;
+    color: #333;
+    text-align: center;
+    background-image: url(image/work.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  600px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: some time later;
+    text-shadow: 2px 2px 4px rgba(190, 116, 19, 0.849);
+    position: absolute; /* Делаем заголовок абсолютно позиционированным */
+    bottom: 93%;
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем заголовок */
+    width: 100%; /* Заголовок занимает всю ширину контейнера */
+    padding: 40px 0;
+    
+}
+
+.worker1 {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    
+    border-radius: 5px;
+    
+}
+
+.worker1-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-image: url('image/fon4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 97%;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+}
+
+.worker1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 7%;
+    margin-top: 5px;
+}
+
+.worker1 h3 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    
+}
+
+.worker1 p {
+    font-size: 1.1em;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.workers img[alt="flowers"] {
+    width: 1100px;
+    position: absolute;
+    float: left;
+    margin-top: 590px;
+
+}
+
+@font-face {
+    font-family: 'SomeTimeLater';
+    src: url('fonts/sometimelater.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'SomeTimeLater', sans-serif;
+}
+
+.comments {
+   
+    text-align: center;
+    margin-top: 10px;
+    background-image: url(image/fon2.webp);
+    border-radius: 10%;
+    
+  }
+  
+  .comments h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+  }
+  
+  .comment1 {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    margin: 10px;
+    padding: 20px;
+    text-align: left;
+    background-image: url(image/fon4.png);
+    background-repeat: inherit;
+    background-position: top;
+    background-size: cover;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+    
+  }
+  
+  .comments img[alt="flowers"] {
+    width: 1050px;
+    position: relative;
+    align-items: center;
+    padding: 1px;
+    margin-top: 20px;
+
+}
+
+  .comment1 img {
+    width: 200px; /* Задайте желаемую ширину изображения */
+    height: 200px;
+    position: static;
+    margin-bottom: 10px;
+    border-radius: 50%; /* Делаем изображение круглым */
+    border: 2px solid #000; /* Добавляем борт */
+    margin-left: 35px;
+  }
+  
+  .comment1 h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+  }
+  
+  .comment1 p {
+    font-size: 1em;
+    line-height: 1.6;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+  }
+  
+  .leavecomment {
+    margin-top: 5px;
+    background-image: url(image/fon4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    background-position: center;
+    
+  }
+  
+  .leavecomment h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+  }
+  
+  .leavecomment form {
+    margin-top: 5px;
+    
+    background-image: url(image/fon4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50px;
+  }
+  
+  .leavecomment button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font: 1em some time later;
+   
+  }
+  
+.flower{
+    width: 1100px;
+    position: relative;
+}
+  
+  /* Стили для изображения "quality" */
+  .comment1 img[alt="quality"] {
+    width: 100px; /* Задайте желаемую ширину изображения */
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .destonation {
+    position: relative;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+    width: 800px;
+    margin: 10px auto;
+    background-image: url('image/map1.png');
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    height: 500px;
+    background-size: cover;
+    border: 5px solid #000000;
+}
+
+
+.destonation h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2em;
+    background-image: url(image/image\ \(8\).png);
+    background-position: center;
+    width: 100%;
+    
+}
+
+.map-left {
+    
+    bottom: 20px;
+    left: 20px;
+    float: right;
+}
+
+.map-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    
+}
+
+.contacts {
+    float: left;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    width: 20%;
+    margin-left: 20px;
+    
+
+
+}
+
+.map img {
+    max-width: 70%;
+    
+}
+
+.map img[alt="phone"] {
+    width: 70px;
+    
+}
+
+.map img[alt="bus"] {
+    width: 70px;
+    float: right;
+    margin-right: 200px;
+}
+
+.map img[alt="map"] {
+    width: 300px;
+    border: 2px solid #ccc;
+    position: relative;
+    bottom: 200px;
+}
+
+.rrr {
+    text-align: center;
+    
+    font-size: 2em;
+    background-image: url(image/image\ \(9\).png);
+    background-position: center;
+    width: 700px;
+    margin-left: 220px;
+
+}
+
+.destonation h2{
+    font-size: 1.2em;
+    line-height: 1.6;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+    margin-left: 400px;
+    float: left;
+    margin-bottom: 1px;
+    top: 200px;
+    background-image: url(image/image\ \(10\).png);
+}
+
+.destonation p{
+    font-size: 1.2em;
+    line-height: 1.6;
+    -webkit-text-stroke: 5px #000000;
+    paint-order: stroke fill;
+    margin-left: 400px;
+    float: left;
+    margin-bottom: 1px;
+    top: 200px;
+
+}

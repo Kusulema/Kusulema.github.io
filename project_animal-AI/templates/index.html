@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+        <title>Распознаватель животных</title>
+        <link rel="stylesheet" href="static/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Распознаватель животных</h1>
+
+            <!-- Форма загрузки с правильным action -->
+            <form action="/predict" method="POST" enctype="multipart/form-data" id="uploadForm">
+                <input type="file" name="file" id="fileInput" accept="image/*" required>
+                <button type="submit">Загрузить</button>
+            </form>
+
+            <!-- Блок для отображения результатов -->
+            <div id="result" class="result"></div>
+            
+            <!-- Блок для отображения изображения -->
+            <h2>Загруженное изображение:</h2>
+            <img id="uploadedImage" />
+
+        </div>
+
+        <script>
+            // Обработка загрузки изображения через форму
+            const form = document.getElementById('uploadForm');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();  // Останавливаем стандартную отправку формы
+
+                const formData = new FormData();
+                formData.append('file', document.getElementById('fileInput').files[0]);
+
+                try {
+                    const response = await fetch('/predict', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    // Отображаем предсказания на странице
+                    if (data.predictions) {
+                        let resultText = '<span class="predictions-title">Предсказанные животные:</span><br>';
+                        data.predictions.forEach(prediction => {
+                            let probability = (parseFloat(prediction.probability) * 100).toFixed(2) + '%';
+                            resultText += `<span class="prediction-item">${prediction.description}: ${probability}</span><br>`;
+                        });
+                        document.getElementById('result').innerHTML = resultText;
+                    } else {
+                        document.getElementById('result').textContent = 'Ошибка: файл не загружен';
+                    }
+
+                    // Отображаем изображение
+                    let uploadedImage = document.getElementById('uploadedImage');
+                    uploadedImage.src = data.image_url;  // Используем путь, полученный с сервера
+                    uploadedImage.style.display = 'block';  // Показываем изображение
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    document.getElementById('result').textContent = 'Произошла ошибка при загрузке';
+                }
+            });
+        </script>
+    </body>
+</html>
