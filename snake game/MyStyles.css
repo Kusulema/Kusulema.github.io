@@ -6,7 +6,7 @@ float: left;
 margin-right: 10px;
 }
 -game-table{
-border-collapse: collapse; background-color: #3e3e3e;}
+border-collapse: collapse; background-color: red;}
 td.game-table-cell{
 width: 15px;
 height: 15px;
